@@ -25,9 +25,17 @@ class SessionController {
       return res.status(401).json({ error: 'User not found' });
     }
 
+    // Check password
     if (!(await user.checkPassword(password))) {
       return res.status(401).json({ error: 'Password does not match' });
     }
+
+    // Check administrator
+    /* if (!user.administrator) {
+      return res
+        .status(401)
+        .json({ error: 'Login Permited only administrator' });
+    } */
 
     const { id, name } = user;
 

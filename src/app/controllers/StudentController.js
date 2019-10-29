@@ -42,7 +42,7 @@ class StudentsController {
   }
 
   async update(req, res) {
-    /* const schema = Yup.object().shape({
+    const schema = Yup.object().shape({
       name: Yup.string(),
       email: Yup.string().email(),
       oldPassword: Yup.string().min(6),
@@ -83,7 +83,7 @@ class StudentsController {
       name,
       email,
       provider,
-    }); */
+    });
   }
 }
 
